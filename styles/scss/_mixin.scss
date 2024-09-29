@@ -1,0 +1,77 @@
+@mixin universal{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+@mixin fitsize{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@mixin fontstyle($weight){
+    font-family: "Poppins", sans-serif;
+    font-weight: $weight;
+}
+
+
+@mixin media($x){
+    @if(L == $x){    
+        @media (max-width:834px){
+            @content;
+        }
+    }
+
+
+    @else if( K == $x ){
+        @media (max-width:882px){
+            @content;
+        }
+    }
+    @else{
+        @media(min-width:834px){
+            @content;
+        }
+    }
+
+};
+
+@mixin hover($bgcolor , $color){
+    &:hover{
+        background-color: $bgcolor;
+        color: $color;
+    }
+};
+
+@mixin hoverr{
+    &:hover{
+        @content
+    }
+};
+
+@mixin bradius($border){
+    border-radius: $border;
+    -webkit-border-radius: $border ;
+    -moz-border-radius: $border ;
+    -ms-border-radius: $border ;
+    -o-border-radius: $border ;
+};
+
+@mixin bradiusall($border , $border-1 , $border-2 , $border-3){
+    border-radius: $border $border-1 $border-2 $border-3 ;
+    -webkit-border-radius: $border $border-1 $border-2 $border-3 ;
+    -moz-border-radius: $border $border-1 $border-2 $border-3 ;
+    -ms-border-radius: $border $border-1 $border-2 $border-3 ;
+    -o-border-radius: $border $border-1 $border-2 $border-3 ;
+};
+
+@mixin transition($ms , $mode){
+    transition: $ms $mode;
+    -webkit-transition: $ms $mode;
+    -moz-transition: $ms $mode;
+    -ms-transition: $ms $mode;
+    -o-transition: $ms $mode;
+}
